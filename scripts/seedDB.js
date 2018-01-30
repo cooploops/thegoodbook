@@ -5,18 +5,21 @@ mongoose.Promise = global.Promise;
 // This file empties the products collection and inserts the products below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/nameofcollection",
+  process.env.MONGODB_URI || "mongodb://localhost/goodbookproducts",
   {
     useMongoClient: true
   }
 );
 
-const productSeed = [
-];
+const productSeed = [{
+  stuff1: "this is a test 1",
+  stuff2: "this is a test 2",
+  stuff3: "this is a test 3"
+}];
 
-db.product
+db.Product
   .remove({})
-  .then(() => db.product.collection.insertMany(productSeed))
+  .then(() => db.Product.collection.insertMany(productSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
