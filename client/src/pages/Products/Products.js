@@ -11,9 +11,9 @@ class Products extends Component {
     stuff3: ""
   };
 
-  componentDidMount() {
-    this.loadProducts();
-  }
+  // componentDidMount() {
+  //   this.loadProducts();
+  // }
 
   loadProducts = () => {
     API.getProducts()
@@ -51,7 +51,7 @@ class Products extends Component {
                   <divItem key={product._id}>
                     <Link to={"/products/" + product._id}>
                       <strong>
-                        {stuff}
+                        hi
                       </strong>
                     </Link>
                     <button onClick={() => this.deleteProduct(product._id)} />

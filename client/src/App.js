@@ -1,42 +1,54 @@
-import React from "react";
+import React, { Component }from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {auth, provider} from './firebase';
 import Products from "./pages/Products";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 
-const App = () =>
-  <Router>
-    <div>
-      <Nav />
-      <Switch>
-        <Route exact path="/" component={Products} />
-        <Route exact path="/products" component={Products} />
-        <Route component={NoMatch} />
-      </Switch>
-    </div>
-  </Router>;
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      user: null
+    }
+  }
 
+  login = () => {
+    auth.signInWithPopup(provider)
+    .then((result) => {
+      const user = result.user;
+      console.log(user);
+      this.setState({
+        user
+      });
+    });
+  }
+
+  logout = () => {
+    auth.signOut()
+    .then(() => {
+      this.setState({
+        user: null
+      });
+    });
+  }
+
+  render(){
+    return(
+      <Router>
+        <div>
+          <Nav 
+          userStatus={this.state.user}
+          login={this.login}
+          logout={this.logout}/>
+          <Switch>
+            <Route exact path="/" component={Products} />
+            <Route exact path="/products" component={Products} />
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
+}
 export default App;
-
-
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h1 className="App-title">Welcome to React</h1>
-//         </header>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
