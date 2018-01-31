@@ -2,39 +2,56 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
+import { List, ListItem } from "../../components/List";
 
 class Products extends Component {
   state = {
     products: [],
-    stuff1: "",
-    stuff2: "",
-    stuff3: ""
+    name: "",
+  contents: {
+    item1: "",
+    item2: "",
+    item3: ""
+  },
+  price: "",
+  img: ""
   };
 
-  // componentDidMount() {
-  //   this.loadProducts();
-  // }
+  componentDidMount() {
+    this.loadProducts();
+    console.log(this.state);
+  }
 
   loadProducts = () => {
     API.getProducts()
       .then(res =>
-        this.setState({ products: res.data, stuff1: "", stuff2: "", stuff3: "" })
+        this.setState({ products: res.data, name: "",
+        contents: {
+          item1: "",
+          item2: "",
+          item3: ""
+        },
+        price: "",
+        img: ""})
       )
       .catch(err => console.log(err));
+
   };
 
-  deleteProduct = id => {
-    API.deleteProduct(id)
-      .then(res => this.loadProducts())
-      .catch(err => console.log(err));
-  };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+
+  // deleteProduct = id => {
+  //   API.deleteProduct(id)
+  //     .then(res => this.loadProducts())
+  //     .catch(err => console.log(err));
+  // };
+
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
   render() {
     return (
@@ -46,18 +63,18 @@ class Products extends Component {
           <Col size="md-6">
 
             {this.state.products.length ? (
-              <div>
+              <List>
                 {this.state.products.map(product => (
-                  <divItem key={product._id}>
+                  <ListItem key={product._id}>
                     <Link to={"/products/" + product._id}>
                       <strong>
-                        hi
+                        {product.name}
                       </strong>
                     </Link>
-                    <button onClick={() => this.deleteProduct(product._id)} />
-                  </divItem>
+                    
+                  </ListItem>
                 ))}
-              </div>
+              </List>
             ) : (
               <h3>No Results to Display</h3>
             )}
