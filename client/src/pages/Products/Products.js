@@ -8,11 +8,11 @@ class Products extends Component {
   state = {
     products: [],
     name: "",
-  contents: {
-    item1: "",
-    item2: "",
-    item3: ""
-  },
+    contents: {
+      item1: "",
+      item2: "",
+      item3: ""
+    },
   price: "",
   img: ""
   };

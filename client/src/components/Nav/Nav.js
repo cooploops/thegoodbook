@@ -1,21 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = (props) =>
   <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-top">
     <div className="container-fluid">
-      <a href="/" className="navbar-brand">
+      <Link to="/" className="navbar-brand">
         The Good Book
-      </a>
+      </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon" />
       </button>
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">Products</a>
+            <Link className="nav-link" to="/products">Products</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">Cart</a>
+            <Link className="nav-link" to="/Cart">Cart</Link>
           </li>
         </ul>
         <span 
