@@ -8,18 +8,18 @@ class Products extends Component {
   state = {
     products: [],
     name: "",
-  contents: {
-    item1: "",
-    item2: "",
-    item3: ""
-  },
+    contents: {
+      item1: "",
+      item2: "",
+      item3: ""
+    },
   price: "",
   img: ""
   };
 
   componentDidMount() {
     this.loadProducts();
-    console.log(this.state);
+
   }
 
   loadProducts = () => {
@@ -35,7 +35,6 @@ class Products extends Component {
         img: ""})
       )
       .catch(err => console.log(err));
-
   };
 
 
@@ -68,9 +67,19 @@ class Products extends Component {
                   <ListItem key={product._id}>
                     <Link to={"/products/" + product._id}>
                       <strong>
-                        {product.name}
+                        {product.name} 
                       </strong>
                     </Link>
+                    <h6>Contains:</h6>
+                       {product.contents.item1}
+                       <br />
+                       {product.contents.item2}
+                       <br />
+                       {product.contents.item3}
+
+                       <h6>Price: {product.price}</h6>
+                       
+                      
                     
                   </ListItem>
                 ))}
