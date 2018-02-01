@@ -4,6 +4,8 @@ import {auth, provider} from './firebase';
 import Products from "./pages/Products";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Carousel from "./components/Carousel";
+import Home from "./pages/Home";
 
 class App extends Component {
   constructor(props){
@@ -42,7 +44,7 @@ class App extends Component {
           login={this.login}
           logout={this.logout}/>
           <Switch>
-            <Route exact path="/" component={Products} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/products" component={Products} />
             <Route component={NoMatch} />
           </Switch>
