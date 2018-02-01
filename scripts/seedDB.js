@@ -18,7 +18,30 @@ const productSeed = [{
     item2: "Cocoa Crispy Treat",
     item3: "PB and Jays"
   },
-  price: "$12.99",
+  price: "$18.99",
+  quantity: 10,
+  img: "./img/exampleimage.png"
+},
+{
+  name: "The Gummy Box",
+  contents: {
+    item1: "Gummy Worms",
+    item2: "Jelly Beans",
+    item3: "Hard Candy"
+  },
+  price: "$15.99",
+  quantity: 8,
+  img: "./img/exampleimage.png"
+},
+{
+  name: "The Pastry Box",
+  contents: {
+    item1: "Cupcake",
+    item2: "Danish",
+    item3: "Cream Puff"
+  },
+  price: "$18.99",
+  quantity: 8,
   img: "./img/exampleimage.png"
 }];
 
@@ -31,6 +54,18 @@ const customerSeed = [{
     city: "Los Angeles",
     state: "CA",
     zipCode: "90041"
+  },
+  paymentInfo: "PayPal"
+},
+{
+  firebaseID: "Kv_1ou7-GCkCnEAH8M3",
+  firstName: "Phil",
+  lastName: "McCracken",
+  address: {
+    street: "4321 Whattheheck Ln.",
+    city: "Los Angeles",
+    state: "CA",
+    zipCode: "90025"
   },
   paymentInfo: "PayPal"
 }];
