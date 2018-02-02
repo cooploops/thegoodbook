@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("./models");
 mongoose.Promise = global.Promise;
 
 // This file empties the customers collection and inserts the customers below
@@ -20,7 +20,7 @@ const productSeed = [{
   },
   price: "$18.99",
   quantity: 10,
-  img: "./img/exampleimage.png"
+  img: "./img/ChocolateTreats.jpeg"
 },
 {
   name: "The Gummy Book",
@@ -31,7 +31,7 @@ const productSeed = [{
   },
   price: "$15.99",
   quantity: 6,
-  img: "./img/exampleimage.png"
+  img: "./img/gummies.jpeg"
 },
 {
   name: "The Pastry Book",
@@ -42,7 +42,7 @@ const productSeed = [{
   },
   price: "$18.99",
   quantity: 8,
-  img: "./img/exampleimage.png"
+  img: "./img/bakedGoods.jpeg"
 }];
 
 const customerSeed = [{
