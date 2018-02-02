@@ -4,7 +4,7 @@ import {auth, provider} from './firebase';
 import Products from "./pages/Products";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import Carousel from "./components/Carousel";
+// import Carousel from "./components/Carousel";
 import Home from "./pages/Home";
 
 class App extends Component {
