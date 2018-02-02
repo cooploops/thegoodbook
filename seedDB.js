@@ -23,18 +23,18 @@ const productSeed = [{
   img: "./img/exampleimage.png"
 },
 {
-  name: "The Gummy Box",
+  name: "The Gummy Book",
   contents: {
     item1: "Gummy Worms",
     item2: "Jelly Beans",
     item3: "Hard Candy"
   },
   price: "$15.99",
-  quantity: 8,
+  quantity: 6,
   img: "./img/exampleimage.png"
 },
 {
-  name: "The Pastry Box",
+  name: "The Pastry Book",
   contents: {
     item1: "Cupcake",
     item2: "Danish",
