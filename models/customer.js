@@ -3,9 +3,11 @@ const Schema = mongoose.Schema;
 
 //not sure what the structure of this will be yet
 const customerSchema = new Schema({
-    firebaseID: "",
-    firstName: "",
-    lastName: "",
+  uid: "",
+  firebaseID: "",
+    displayName: "",
+    email: "",
+    photoURL: "",
     address: {
       street: "",
       city: "",

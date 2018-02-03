@@ -45,42 +45,19 @@ const productSeed = [{
   img: "./img/bakedGoods.jpeg"
 }];
 
-const customerSeed = [{
-  firebaseID: "Kv_1ou7-GCkCnEAH8M3",
-  firstName: "Felix",
-  lastName: "Rupert",
-  address: {
-    street: "1234 Yermom Ln.",
-    city: "Los Angeles",
-    state: "CA",
-    zipCode: "90041"
-  },
-  paymentInfo: "PayPal"
-},
-{
-  firebaseID: "Kv_1ou7-GCkCnEAH8M3",
-  firstName: "Phil",
-  lastName: "McCracken",
-  address: {
-    street: "4321 Whattheheck Ln.",
-    city: "Los Angeles",
-    state: "CA",
-    zipCode: "90025"
-  },
-  paymentInfo: "PayPal"
-}];
+// const customerSeed = [{}];
 
-db.Customer
-  .remove({})
-  .then(() => db.Customer.collection.insertMany(customerSeed))
-  .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Customer
+//   .remove({})
+//   .then(() => db.Customer.collection.insertMany(customerSeed))
+//   .then(data => {
+//     console.log(data.insertedIds.length + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
 
   db.Product
   .remove({})

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Carousel from "../../components/Carousel";
-
+import Testimonials from "../../components/Testimonials"
 
 class Home extends Component{
   constructor(props){
@@ -27,6 +27,7 @@ class Home extends Component{
   render() {
     return(
       <Carousel products={this.state.products}/>
+      <Testimonials />
     )
   }
 
