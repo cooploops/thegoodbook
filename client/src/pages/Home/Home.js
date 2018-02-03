@@ -7,7 +7,7 @@ class Home extends Component{
   constructor(props){
     super(props);
     this.state = {
-      products: null
+      products: []
     }
   }
 
@@ -18,8 +18,7 @@ class Home extends Component{
   loadProducts = () => {
     API.getProducts()
       .then(res =>
-        console.log(res.data)
-        // this.setState({products: res.data})
+        this.setState({products: res.data})
       )
       .catch(err => console.log(err));
   };
@@ -27,7 +26,7 @@ class Home extends Component{
 
   render() {
     return(
-      <Carousel />
+      <Carousel products={this.state.products}/>
     )
   }
 

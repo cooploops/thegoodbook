@@ -8,38 +8,20 @@ const Carousel = (props) =>
     <div className="container">
         <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img className="d-block" width={400} height={400} src="./img/gummies400px.jpeg" alt="First slide"></img>
-                    <strong>"The Gummy Book"</strong>
-                    <h6>Contains:</h6>
-                    Gummy Worms<br/>
-                    Jelly Beans<br/>
-                    Hard Candy<br/>
-                    <h6>Price:</h6>
-                    $15.99
 
-                </div>
-                <div className="carousel-item">
-                    <img className="d-block" width={400} height={400} src="./img/bakedGoods400px.jpeg" alt="Second slide"></img>
-                    <strong>"The Pastry Book"</strong>
+                {props.products.map(product => 
+                <div key={product.name} className={product.name === 'The Gummy Book' ? 'carousel-item active' : 'carousel-item'}>
+                    <img className="d-block" width={800} height={400} src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
+                    <strong>{product.name}</strong>
                     <h6>Contains:</h6>
-                    Cupcake<br/>
-                    Danish<br/>
-                    Cream Puff<br/>
+                    {product.contents.item1}<br/>
+                    {product.contents.item2}<br/>
+                    {product.contents.item3}<br/>
                     <h6>Price:</h6>
-                    $18.99
+                    {product.contents.price}
                 </div>
-                <div className="carousel-item">
-                    <img className="d-block" width={400} height={400} src="./img/ChocolateTreats400px.jpeg" alt="Third slide"></img>
-                    <strong>"The Chocolate Book"</strong>
-                    <h6>Contains:</h6>
-                    Candy Bar<br/>
-                    Cocoa Crispy Treat<br/>
-                    PB and Jays<br/>
-                    <h6>Price:</h6>
-                    $18.99
-                </div>
-            </div>
+                )}
+
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="sr-only">Previous</span>
@@ -48,6 +30,7 @@ const Carousel = (props) =>
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="sr-only">Next</span>
             </a>
+            </div>
         </div>
     </div>
 
