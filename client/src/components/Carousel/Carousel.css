@@ -1,0 +1,19 @@
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: black !important;
+}
+
+.carousel-inner {
+    width: 800px;
+    height: 400px
+}
+
+.carousel-item {
+    position: relative;
+    left: 100px
+}
+
+.prod-descrip {
+    position: relative;
+    top: -350px;
+    left: 500px
+}

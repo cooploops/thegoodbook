@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Carousel.css";
 
 
 
@@ -11,7 +11,8 @@ const Carousel = (props) =>
 
                 {props.products.map(product => 
                 <div key={product.name} className={product.name === 'The Gummy Book' ? 'carousel-item active' : 'carousel-item'}>
-                    <img className="d-block" width={800} height={400} src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
+                    <img className="d-block" src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
+                    <div className="prod-descrip">
                     <strong>{product.name}</strong>
                     <h6>Contains:</h6>
                     {product.contents.item1}<br/>
@@ -19,6 +20,7 @@ const Carousel = (props) =>
                     {product.contents.item3}<br/>
                     <h6>Price:</h6>
                     {product.contents.price}
+                    </div>
                 </div>
                 )}
 
