@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Carousel from "../../components/Carousel";
 import Testimonials from "../../components/Testimonials"
+import Footer from "../../components/Footer";
 
 class Home extends Component{
   constructor(props){
@@ -29,6 +30,7 @@ class Home extends Component{
       <div>
         <Carousel products={this.state.products}/>
         <Testimonials />
+        <Footer />
       </div>
     )
   }

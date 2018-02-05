@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Footer from "../../components/Footer";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
@@ -63,8 +64,9 @@ class Products extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+            <Footer />
 </div>
-      // </Container>
+
     );
   }
 }
