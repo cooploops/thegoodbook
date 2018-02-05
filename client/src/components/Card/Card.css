@@ -1,23 +1,44 @@
-.card {
-    background: #fff;
-    border-radius: 2px;
-    height: 325px;
-    margin: 1rem;
-    position: relative;
-    width: 325px;
-    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-    text-align: left;
-  }
-  
-  .card > .img-container {
-    height: 60%;
-    overflow: hidden;
-    text-align: center;
-    background:#6CADDC;
-  }
-  .card > .img-container > img {
-    width: 60%
-  }
+.card > .img-container > img {
+  width: 20%;
+  position: relative;
+  margin: 10px 0 0 10px
+}
+ .card {
+  background: rgb(202, 202, 202);
+  border-radius: 2px;
+  height: 100px;
+  margin: 1rem;
+  position: relative;
+  width: 325px;
+  box-shadow: 0 1px 3px #999, 0 1px 3px #999;
+  text-align: left;
+}
+
+.testimon-text {
+  width: 260px;
+  font-size: 14px;
+  /* line-height: 14px; */
+  position: relative;
+  left: 50px;
+  bottom: 100px
+}
+
+.testimon-name {
+  position: relative;
+  top: 15px;
+  height: 16px;
+  padding: 0;
+  margin: 0
+}
+
+/*
+
+.card > .img-container {
+  height: 20%;
+  overflow: hidden;
+  text-align: center;
+  background:#6CADDC;
+}
   
   .card > .content {
     padding-left: 1rem;
@@ -25,13 +46,6 @@
     font-size: 15px;
   }
   
-  .card > .content > ul {
-    list-style-type: none;
-  }
-  
-  .card > .content > ul > li {
-    margin-top: 18px;
-  }
   
   .card > .remove {
     color: #ff1744;
@@ -45,4 +59,11 @@
   .card > .remove:hover {
     color: #d50000;
   }
-  
+  */
+          .card > .content > ul {
+            list-style-type: none;
+          }
+          
+          .card > .content > ul > li {
+            margin-top: 18px;
+          }

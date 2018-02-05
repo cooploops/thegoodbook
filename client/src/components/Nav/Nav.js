@@ -6,7 +6,7 @@ const Nav = (props) =>
   <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-top">
     <div className="container-fluid">
       <Link to="/" className="navbar-brand">
-     <img src="./img//tgb-logo-02.png" alt="The Good Book"/>
+     <img src="./img//tgb-logo-03.png" alt="The Good Book"/>
       </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon" />

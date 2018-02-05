@@ -1,4 +1,32 @@
+.navbar, .navbar-expand-lg, .navbar-light, .bg-light, .navbar-top {
+    background-color: darkolivegreen !important
+}
+
 .user-pic-thumb {
     width: 40px;
-    margin-right: 5px
+    margin-right: 10px
+}
+
+.nav-item {
+    background-color: rgb(47, 80, 10);
+    border-radius: 5px;
+    margin: 0 10px 0 0
+}
+
+.nav-item:hover {
+    background-color: rgb(93, 124, 58);
+}
+
+.nav-link {
+    color: rgb(233, 233, 233) !important
+}
+
+.btn, .btn-primary {
+    background-color: rgb(131, 131, 131) !important;
+    border-color: rgb(85, 85, 85);
+}
+
+.btn:hover, .btn-primary:hover {
+    background-color: rgb(140, 153, 119) !important;
+    border-color: rgb(163, 163, 163);
 }
