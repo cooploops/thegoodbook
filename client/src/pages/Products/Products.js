@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+// import { Link } from "react-router-dom";
+// import { Col, Row, Container } from "../../components/Grid";
+// import { List, ListItem } from "../../components/List";
 
 class Products extends Component {
   state = {
@@ -34,61 +34,37 @@ class Products extends Component {
         img: ""})
       )
       .catch(err => console.log(err));
+
   };
 
-
-
-  // deleteProduct = id => {
-  //   API.deleteProduct(id)
-  //     .then(res => this.loadProducts())
-  //     .catch(err => console.log(err));
-  // };
-
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
   render() {
+    console.log(this.state.products);
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-
-          </Col>
-          <Col size="md-6">
-
+      // <Container fluid>
+<div>
             {this.state.products.length ? (
-              <List>
-                {this.state.products.map(product => (
-                  <ListItem key={product._id}>
-                    <Link to={"/products/" + product._id}>
-                      <strong>
-                        {product.name} 
-                      </strong>
-                    </Link>
+              <div className="container">
+                {this.state.products.map(product => 
+                <div key={product._id} >
+                    <img src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
+                    <div className="prod-descrip">
+                    <strong>{product.name}</strong>
                     <h6>Contains:</h6>
-                       {product.contents.item1}
-                       <br />
-                       {product.contents.item2}
-                       <br />
-                       {product.contents.item3}
-
-                       <h6>Price: {product.price}</h6>
-                       
-                      
-                    
-                  </ListItem>
-                ))}
-              </List>
+                    {product.contents.item1}<br/>
+                    {product.contents.item2}<br/>
+                    {product.contents.item3}<br/>
+                    <h6>Price:</h6>
+                    {product.price}<br/>
+                    <button data-db-id={product._id} className="btn">Add To Cart</button>
+                    </div>
+                </div>
+                )}
+              </div>
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col>
-        </Row>
-      </Container>
+</div>
+      // </Container>
     );
   }
 }
