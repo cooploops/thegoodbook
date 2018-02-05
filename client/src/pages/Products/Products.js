@@ -19,7 +19,6 @@ class Products extends Component {
 
   componentDidMount() {
     this.loadProducts();
-
   }
 
   loadProducts = () => {
