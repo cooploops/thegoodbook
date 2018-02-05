@@ -1,5 +1,6 @@
 .carousel-control-next-icon, .carousel-control-prev-icon {
-    background-color: black !important;
+    background-color: rgb(119, 119, 119) !important;
+    border-radius: 25%;
 }
 
 .carousel-inner {
@@ -17,4 +18,26 @@
     position: relative;
     top: -350px;
     left: 450px
+}
+
+.carousel-inner {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(214, 214, 214);
+    border-radius: 10px
+}
+
+.carousel-img {
+    margin: 20px;
+    width: 360px;
+    border-radius: 10px;
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(157, 157, 157)
+}
+
+button {
+    color: white
 }

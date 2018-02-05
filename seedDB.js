@@ -34,7 +34,7 @@ const productSeed = [{
   img: "./img/gummies.jpeg"
 },
 {
-  name: "The Pastry Book",
+  name: "The Baked Book",
   contents: {
     item1: "Cupcake",
     item2: "Danish",

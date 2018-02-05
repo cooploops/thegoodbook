@@ -5,13 +5,13 @@ import "./Carousel.css";
 
 //This needs to take in props from the 'products' component
 const Carousel = (props) =>
-    <div className="container">
+    <div className="container-fluid">
         <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
 
                 {props.products.map(product => 
                 <div key={product.name} className={product.name === 'The Gummy Book' ? 'carousel-item active' : 'carousel-item'}>
-                    <img src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
+                    <img className="carousel-img img-fluid" src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
                     <div className="prod-descrip">
                     <strong>{product.name}</strong>
                     <h6>Contains:</h6>

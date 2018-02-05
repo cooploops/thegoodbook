@@ -38,6 +38,7 @@ class Testimonials extends Component {
                         key={image.id}
                         name={image.name}
                         image={image.image}
+                        quote={image.quote}
                     />
                 ))}
             </div>

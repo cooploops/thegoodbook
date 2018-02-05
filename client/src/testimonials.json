@@ -1,87 +1,57 @@
 [
     {
       "id": 1,
-      "name": "SpongeBob",
-      "image": "img/annie.jpg",
-      "occupation": "Fry Cook",
-      "location": "A Pineapple Under the Sea"
+      "name": "Annie",
+      "image": "img/annie.png",
+      "quote": "I love that my edibles come in a descrete 'book' box!"
     },
     {
       "id": 2,
-      "name": "Mr. Krabs",
-      "image": "img/austin.jpg",
-      "occupation": "Restaurant Owner",
-      "location": "A Giant Anchor"
+      "name": "Austin",
+      "image": "img/austin.png",
+      "quote": "Working with Mike is always such a treat!"
     },
     {
       "id": 3,
-      "name": "Squidward",
-      "image": "img/beth.jpg",
-      "occupation": "Cashier",
-      "location": "An Easter Island Head"
+      "name": "Beth",
+      "image": "img/beth.png",
+      "quote": "This site delivers the goods, what else can I say!?"
     },
     {
       "id": 4,
-      "name": "Dexter",
-      "image": "img/christi.jpg",
-      "occupation": "Boy Genius",
-      "location": "A Secret Laboratory"
+      "name": "Christi",
+      "image": "img/christi.png",
+      "quote": "It's nice to come home after a long day of work and find The Good Book at my door :-)"
     },
     {
       "id": 5,
-      "name": "Courage",
-      "image": "img/erik.jpg",
-      "occupation": "A Cowardly Dog",
-      "location": "Nowhere, Kansas"
+      "name": "Erik",
+      "image": "img/erik.png",
+      "quote": "Such a genious idea and a well done site!"
     },
     {
       "id": 6,
-      "name": "Doug Funnie",
-      "image": "img/ester.jpg",
-      "occupation": "Student",
-      "location": "Bluffington"
+      "name": "Ester",
+      "image": "img/ester.png",
+      "quote": "The Good Book gets me lifted to my higher power!"
     },
     {
       "id": 7,
-      "name": "Bugs Bunny",
-      "image": "img/jeremiah.jpg",
-      "occupation": "Looney Toon",
-      "location": "A Rabbit Burrow"
+      "name": "Jeremiah",
+      "image": "img/jeremiah.png",
+      "quote": "After snacking down on these, I don't need to remember to order more... they just show up!"
     },
     {
       "id": 8,
-      "name": "Johnny Bravo",
-      "image": "img/kimberly.jpg",
-      "occupation": "Ladies Man",
-      "location": "Aron City"
+      "name": "Kimberly",
+      "image": "img/kimberly.png",
+      "quote": "The BAKED book is obviously my favorite! Good job guys!"
     },
     {
       "id": 9,
-      "name": "This shit'll fuck you up - DJ mikeBalance",
-      "image": "img/mike.jpg",
-      "occupation": "Adventurer",
-      "location": "California"
-    },
-    {
-      "id": 10,
-      "name": "Rocko",
-      "image": "http://vignette3.wikia.nocookie.net/rockosmodernlife/images/9/9e/Rockos-modern-life-4e582a8f06a41.png/revision/latest?cb=20130522173416",
-      "occupation": "Cashier",
-      "location": "O-Town, California"
-    },
-    {
-      "id": 11,
-      "name": "Captain Planet",
-      "image": "http://vignette2.wikia.nocookie.net/dragon-rap-battles/images/b/b6/Captain_Planet.png/revision/latest?cb=20160911200836",
-      "occupation": "Superhero",
-      "location": "Earth"
-    },
-    {
-      "id": 12,
-      "name": "Ickis",
-      "image": "img/rei.jpg",
-      "occupation": "Ahhhh! A Real Monster!",
-      "location": "Under a City Dump"
+      "name": "Mike",
+      "image": "img/mike.png",
+      "quote": "So many great books to choose from. Get yo snack on!"
     }
   ]
   

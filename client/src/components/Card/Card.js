@@ -8,15 +8,13 @@ const Card = props => (
       <img alt={props.name} src={props.image} />
     </div>
     <div className="content">
-      <ul>
-        <li>
-          <strong>Name:</strong> {props.name}
+      <ul className="testimon-text">
+        <li className="testimon-name">
+          <strong>{props.name}</strong> 
         </li>
-        <li>
-          <strong>Occupation:</strong> {props.occupation}
-        </li>
-        <li>
-          <strong>Location:</strong> {props.location}
+        <li>"
+          {props.quote}
+          "
         </li>
       </ul>
     </div>
