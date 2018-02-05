@@ -34,3 +34,5 @@ export default {
     return axios.post("/api/products", productData);
   }
 };
+
+
