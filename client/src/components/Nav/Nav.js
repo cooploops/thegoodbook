@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 const Nav = (props) =>
   <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-top">
@@ -22,7 +23,9 @@ const Nav = (props) =>
         <span 
         className="navbar-text">
           {props.userStatus ? 
-          <button onClick={props.logout} className="btn btn-primary">Logout</button>
+          <div>
+            <img src={props.userStatus.photoURL} className="user-pic-thumb img-thumbnail" alt="Current User"/>
+            <button onClick={props.logout} className="btn btn-primary">Logout</button></div>
           :
           <button onClick={props.login} className="btn btn-primary">Login</button>}
         </span>
