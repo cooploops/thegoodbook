@@ -31,6 +31,7 @@ class App extends Component {
   //Need to add oauth token too
   handleCustomerSubmit = event => {
     console.log(this.state.user.email);
+
       API.saveCustomer({
         uid: this.state.user.uid,
         firebaseID: this.state.user.uid,
@@ -63,7 +64,8 @@ class App extends Component {
           <Nav 
           userStatus={this.state.user}
           login={this.login}
-          logout={this.logout}/>
+          logout={this.logout}
+          />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/products" component={Products} />
