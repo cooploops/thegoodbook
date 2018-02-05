@@ -4,7 +4,7 @@ const customersController = require("../../controllers/customersController");
 // Matches with "/api/customers"
 router.route("/")
   .get(customersController.findAll)
-  .post(customersController.create);
+  .post(customersController.update);
 
 // Matches with "/api/customers/:id"
 router
