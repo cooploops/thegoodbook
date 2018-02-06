@@ -39,8 +39,16 @@ class Products extends Component {
 
   };
 
+  handleSingleProduct = cartdata => {
+    console.log(cartdata);
+    // API.getProduct(id)
+    //   .then(res => this.setState({ product: res.data }))
+    //   .catch(err => console.log(err));
+  };
+
+
   render() {
-    console.log(this.state.products);
+    // console.log(this.state.products);
     return (
       // <Container fluid>
 <div>
@@ -57,7 +65,7 @@ class Products extends Component {
                     {product.contents.item3}<br/>
                     <h6>Price:</h6>
                     {product.price}<br/>
-                    <button data-db-id={product._id} className="btn">Add To Cart</button>
+                    <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>Add To Cart</button>
                     </div>
                 </div>
                 )}
