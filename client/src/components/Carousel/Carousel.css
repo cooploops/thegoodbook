@@ -26,8 +26,11 @@
     border: solid;
     border-width: 2px;
     border-color: rgb(214, 214, 214);
-    border-radius: 10px
+    border-radius: 10px;
+    background-color: white;
 }
+
+
 
 .carousel-img {
     margin: 20px;
@@ -39,5 +42,18 @@
 }
 
 button {
-    color: white
+    color: white;
+}
+
+.carousel.slide {
+    background-color: #DCEFDD;
+    padding: 30px;
+}
+
+.carousel-background {
+    background-color: #DCEFDD;
+}
+
+.product-contents {
+    font-family: "Francois-One";
 }
