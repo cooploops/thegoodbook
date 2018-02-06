@@ -42,6 +42,7 @@
 }
 
 button {
+    margin-top: 0.7em;
     color: white;
 }
 
@@ -54,6 +55,10 @@ button {
     background-color: #DCEFDD;
 }
 
-.product-contents {
-    font-family: "Francois-One";
+.carousel-font {
+    font-family: 'Cinzel Decorative', cursive;
 }
+
+/* .product-contents {
+    font-family: 'Cinzel Decorative', cursive;
+} */
