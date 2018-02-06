@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Footer from "../../components/Footer";
 import "./Products.css";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
@@ -65,7 +64,6 @@ class Products extends Component {
             ) : (
               <div></div>
             )}
-            <Footer />
 </div>
 
     );
