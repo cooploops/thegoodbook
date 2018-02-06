@@ -1,9 +1,11 @@
 import React, { Component }from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {auth, provider} from './firebase';
+import { auth, provider } from './firebase';
 import Products from "./pages/Products";
+import Cart from "./pages/Cart";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import API from "./utils/API";
 // import Carousel from "./components/Carousel";
 import Home from "./pages/Home";
@@ -57,6 +59,14 @@ class App extends Component {
     });
   }
 
+  componentDidMount(){
+    auth.onAuthStateChanged((user) => {
+      if(user){
+        this.setState({ user })
+      }
+    });
+  }
+
   render(){
     return(
       <Router>
@@ -69,8 +79,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/products" component={Products} />
+            <Route exact path="/cart" component={Cart} />
             <Route component={NoMatch} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     );
