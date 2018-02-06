@@ -5,7 +5,7 @@ import "./Carousel.css";
 
 //This needs to take in props from the 'products' component
 const Carousel = (props) =>
-    <div className="container-fluid">
+    <div className="container-fluid carousel-background">
         <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
 
@@ -15,9 +15,11 @@ const Carousel = (props) =>
                     <div className="prod-descrip">
                     <strong>{product.name}</strong>
                     <h6>Contains:</h6>
-                    {product.contents.item1}<br/>
-                    {product.contents.item2}<br/>
-                    {product.contents.item3}<br/>
+                    <div className="product-contents">
+                        {product.contents.item1}<br/>
+                        {product.contents.item2}<br/>
+                        {product.contents.item3}<br/>
+                    </div>
                     <h6>Price:</h6>
                     {product.price}<br/>
                     <button data-db-id={product._id} className="btn">Add To Cart</button>
