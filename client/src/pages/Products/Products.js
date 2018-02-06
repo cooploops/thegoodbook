@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "./Products.css";
+import firebase from '../../firebase';
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
@@ -18,7 +19,17 @@ class Products extends Component {
   img: ""
   };
 
+  componentWillMount(){
+    setTimeout(()=>{
+      const user = firebase.auth().currentUser;
+      console.log(user.uid);
+      console.log(user.displayName);
+      console.log(user.email);
+    },350)
+  }
+
   componentDidMount() {
+    // this grabs the current user logged in and has all the data; You can setState from here as well if you want to store it
     this.loadProducts();
   }
 
@@ -47,7 +58,6 @@ class Products extends Component {
 
 
   render() {
-    // console.log(this.state.products);
     return (
       // <Container fluid>
 <div>
