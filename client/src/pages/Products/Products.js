@@ -7,31 +7,42 @@ import firebase from '../../firebase';
 // import { List, ListItem } from "../../components/List";
 
 class Products extends Component {
-  state = {
-    products: [],
-    name: "",
-    contents: {
-      item1: "",
-      item2: "",
-      item3: ""
-    },
-  price: "",
-  img: ""
-  };
-
-  componentWillMount(){
-    setTimeout(()=>{
-      const user = firebase.auth().currentUser;
-      console.log(user.uid);
-      console.log(user.displayName);
-      console.log(user.email);
-    },350)
+  constructor(props){
+    super(props);
+    this.state = {
+      products: [],
+      name: "",
+      contents: {
+        item1: "",
+        item2: "",
+        item3: ""
+      },
+    price: "",
+    img: "",
+    currentUser:null
+    }
   }
 
   componentDidMount() {
     // this grabs the current user logged in and has all the data; You can setState from here as well if you want to store it
     this.loadProducts();
+
+    // setTimeout(this.setState({
+    //   currentUser:firebase.auth().currentUser
+    // }),1000);
+    // setTimeout(console.log(firebase.auth().currentUser),2000);
+    // this.grabCurrentUser();
+
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+        console.log(user)
+      } else{
+        console.log("no user signed in")
+      }
+    })
   }
+
+
 
   loadProducts = () => {
     API.getProducts()
@@ -58,8 +69,8 @@ class Products extends Component {
 
 
   render() {
+    
     return (
-      // <Container fluid>
 <div>
             {this.state.products.length ? (
               <div className="container-fluid">
