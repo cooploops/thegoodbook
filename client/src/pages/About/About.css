@@ -1,0 +1,12 @@
+/* body {
+    background-image: url("https://www.breakingbelizenews.com/wp-content/uploads/2017/08/weed-pic-6.jpg")
+} */
+
+.jumbotron {
+    
+    margin-top: 2em;
+}
+
+.weed-img {
+    overflow: hidden;
+}
