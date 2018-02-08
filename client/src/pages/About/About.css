@@ -8,5 +8,10 @@
 }
 
 .weed-img {
-    overflow: hidden;
+    /* padding: 0;
+    margin-left: auto !important;
+    margin-right: auto !important; */
+    position: relative;
+    left: 42%;
+    width: 12%
 }
