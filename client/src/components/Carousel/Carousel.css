@@ -14,10 +14,23 @@
 }
 
 .prod-descrip {
+    font-family: 'Cinzel Decorative', cursive;
     width: 200px;
     position: relative;
     top: -350px;
     left: 450px
+}
+
+.prod-contains {
+position: relative;
+
+padding: 10px 0 10px 0;
+top: 10px
+}
+
+.prod-price {
+    position: relative;
+    bottom: 20px
 }
 
 .carousel-inner {
@@ -42,23 +55,29 @@
 }
 
 button {
+    
     margin-top: 0.7em;
     color: white;
 }
 
+.sanch-button {
+    font-family: 'Francois One', sans-serif; 
+}
+
 .carousel.slide {
     background-color: #DCEFDD;
-    padding: 30px;
+    padding: 10px;
 }
 
 .carousel-background {
     background-color: #DCEFDD;
 }
 
-.carousel-font {
-    font-family: 'Cinzel Decorative', cursive;
-}
-
-/* .product-contents {
+/* .carousel-font {
     font-family: 'Cinzel Decorative', cursive;
 } */
+
+.product-contents {
+  position: relative;
+  top: 10px
+}

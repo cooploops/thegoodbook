@@ -13,16 +13,17 @@ const Carousel = (props) =>
                 <div key={product.name} className={product.name === 'The Gummy Book' ? 'carousel-item active' : 'carousel-item'}>
                     <img className="carousel-img img-fluid" src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
                     <div className="prod-descrip">
-                    <strong className="carousel-font">{product.name}</strong>
-                    <h6>Contains:</h6>
+                    <strong className="carousel-font prod-title">{product.name}</strong>
+                    <h6 className="prod-contains">Contains:</h6>
                     <div className="product-contents carousel-font">
                         {product.contents.item1}<br/>
                         {product.contents.item2}<br/>
                         {product.contents.item3}<br/>
                     </div>
-                    <h6>Price:</h6>
-                    {product.price}<br/>
-                    <button data-db-id={product._id} className="btn">Add To Cart</button>
+                    <h6 className="prod-price">Price:<br/>
+                    {product.price}
+                    </h6>
+                    <button data-db-id={product._id} className="btn sanch-button">Add To Cart</button>
                     </div>
                 </div>
                 )}

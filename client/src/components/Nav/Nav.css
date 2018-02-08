@@ -4,7 +4,11 @@
 
 .user-pic-thumb {
     width: 40px;
-    margin-right: 10px
+    margin-right: 10px;
+    border: solid;
+    border-color: darkgrey;
+    border-width: 2px;
+    border-radius: 5px
 }
 
 .nav-item {
@@ -24,6 +28,7 @@
 .btn, .btn-primary {
     background-color: rgb(131, 131, 131) !important;
     border-color: rgb(85, 85, 85);
+    margin: 0
 }
 
 .btn:hover, .btn-primary:hover {

@@ -24,10 +24,10 @@ const Nav = (props) =>
         className="navbar-text">
           {props.userStatus ? 
           <div>
-            <img src={props.userStatus.photoURL} className="user-pic-thumb img-thumbnail" alt="Current User"/>
-            <button onClick={props.logout} className="btn btn-primary">Logout</button></div>
+            <img src={props.userStatus.photoURL} className="user-pic-thumb" alt="Current User"/>
+            <button onClick={props.logout} className="btn btn-primary sanch-button">Logout</button></div>
           :
-          <button onClick={props.login} className="btn btn-primary">Login</button>}
+          <button onClick={props.login} className="btn btn-primary sanch-button">Login</button>}
         </span>
       </div>
     </div>
