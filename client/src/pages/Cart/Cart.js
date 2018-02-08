@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./Cart.css";
 import Form from '../../components/Form';
-import Jumbotron from '../../components/Jumbotron';
 import CartItem from '../../components/CartItem';
 import firebase from '../../firebase';
 
