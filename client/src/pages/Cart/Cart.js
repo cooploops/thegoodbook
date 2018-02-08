@@ -4,14 +4,28 @@ import "./Cart.css";
 import Form from '../../components/Form';
 import Jumbotron from '../../components/Jumbotron';
 import CartItem from '../../components/CartItem';
+import firebase from '../../firebase';
 
 class Cart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            cart: []
+            currentUser: null
         }
     }
+
+    componentDidMount() {    
+        firebase.auth().onAuthStateChanged((user)=>{
+          if(user){
+            console.log(user);
+            this.setState({
+                currentUser:user
+            });
+          } else{
+            console.log("no user signed in")
+          }
+        })
+      }
 
     // loadCart(){
     //     API.getCustomer(id)
@@ -35,17 +49,20 @@ class Cart extends Component {
                             <div className="row">
                             </div>
                             <div className="container">
-                                <CartItem />
+                                <CartItem
+                                user={this.state.currentUser} />
                             </div>
                         </div>
                         <div className="col-sm-3">
                             <p>Total Column</p>
+                            <button className="btn btn-primary checkoutBtn mx-auto">Checkout</button>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-sm-9">
                             <div className="container">
-                                <Form />
+                                <Form 
+                                user={this.state.currentUser}/>
                             </div>
                         </div>
                     </div>
