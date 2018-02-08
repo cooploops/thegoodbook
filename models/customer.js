@@ -5,16 +5,17 @@ const Schema = mongoose.Schema;
 const customerSchema = new Schema({
   uid: "",
   firebaseID: "",
-    displayName: "",
-    email: "",
-    photoURL: "",
-    address: {
-      street: "",
-      city: "",
-      state: "",
-      zipCode: ""
-    },
-    paymentInfo: ""
+  displayName: "",
+  email: "",
+  photoURL: "",
+  address: {
+    street: "",
+    city: "",
+    state: "",
+    zipCode: ""
+  },
+  paymentInfo: "",
+  cart: []
   });
 
 const Customer = mongoose.model("Customer", customerSchema);

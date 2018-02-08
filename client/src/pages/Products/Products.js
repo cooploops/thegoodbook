@@ -25,12 +25,13 @@ class Products extends Component {
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
         // console.log(user);
-        this.setState({user: user})
+        this.setState({currentUser: user})
       } else{
         console.log("no user signed in")
       }
     })
     this.loadProducts();
+  }
 
   loadProducts = () => {
     API.getProducts()
@@ -49,14 +50,17 @@ class Products extends Component {
   };
 
   handleSingleProduct = cartdata => {
-    console.log(cartdata);
-    API.saveCart({email: "mikebalance@gmail.com",
-      cart: {prodName: cartdata.prodName, 
+    console.log(this.state.currentUser.uid);
+    API.saveCart(
+      {
+        uid: this.state.currentUser.uid,
+        cart: {
+        prodName: cartdata.prodName, 
         prodPrice: cartdata.prodPrice, 
-        prodIMG: cartdata.prodIMG}
-
-      })
-    };
+        prodIMG: cartdata.prodIMG
+        }  
+      }
+    )};
   
 
 
