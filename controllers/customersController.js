@@ -27,6 +27,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  updateCart: function(req, res) {
+    db.Customer
+      .findOneAndUpdate({ email: req.body.email }, {$set: {cart: req.body.cart}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   remove: function(req, res) {
     db.Customer
       .findById({ _id: req.params.id })

@@ -16,20 +16,32 @@ class Products extends Component {
       item3: ""
     },
   price: "",
-  img: ""
+  img: "",
+  user: null
   };
 
-  componentWillMount(){
-    setTimeout(()=>{
-      const user = firebase.auth().currentUser;
-      console.log(user.uid);
-      console.log(user.displayName);
-      console.log(user.email);
-    },350)
-  }
+  // componentWillMount(){
+  //   setTimeout(()=>{
+  //     const user = firebase.auth().currentUser;
+  //     console.log(user.uid);
+  //     console.log(user.displayName);
+  //     console.log(user.email);
+  //   },350)
+  // }
+
+
+
 
   componentDidMount() {
     // this grabs the current user logged in and has all the data; You can setState from here as well if you want to store it
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+        // console.log(user);
+        this.setState({user: user})
+      } else{
+        console.log("no user signed in")
+      }
+    })
     this.loadProducts();
   }
 
@@ -51,13 +63,18 @@ class Products extends Component {
 
   handleSingleProduct = cartdata => {
     console.log(cartdata);
-    // API.getProduct(id)
-    //   .then(res => this.setState({ product: res.data }))
-    //   .catch(err => console.log(err));
-  };
+    API.saveCart({email: "mikebalance@gmail.com",
+      cart: {prodName: cartdata.prodName, 
+        prodPrice: cartdata.prodPrice, 
+        prodIMG: cartdata.prodIMG}
+
+      })
+    };
+  
 
 
   render() {
+    console.log(this.state.user);
     return (
       // <Container fluid>
 <div>
