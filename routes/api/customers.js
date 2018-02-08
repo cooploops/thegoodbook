@@ -9,6 +9,9 @@ router.route("/")
 router.route("/updatecart")
   .post(customersController.updateCart);
 
+router.route("/saveaddress")
+  .post(customersController.saveAddress);
+
 // Matches with "/api/customers/:id"
 router
   .route("/:id")

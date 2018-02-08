@@ -34,6 +34,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  saveAddress: function(req, res) {
+    console.log(req.body);
+        db.Customer
+    .findOneAndUpdate({ uid: req.body.uid }, {$set: {address: {
+        street: req.body.address.street,
+        city: req.body.address.city,
+        state: req.body.address.state,
+        zipCode: req.body.address.zipCode
+      }}})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+    },
   remove: function(req, res) {
     db.Customer
       .findById({ _id: req.params.id })

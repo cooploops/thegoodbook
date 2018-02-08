@@ -20,11 +20,25 @@ class Cart extends Component {
             this.setState({
                 currentUser:user
             });
+            this.handleAddressSave();
           } else{
             console.log("no user signed in")
           }
         })
       }
+
+//Test for saving address // This successfully save strings but needs to be modified
+//Check componentDidMount
+      handleAddressSave() {
+        API.saveAddress(
+        {
+         uid: this.state.currentUser.uid,
+         address: {
+            street: "Test St.",
+            city: "Test City",
+            state: "CA",
+            zipCode: "90025"  }}
+        )};
 
     // loadCart(){
     //     API.getCustomer(id)
@@ -37,6 +51,7 @@ class Cart extends Component {
     componentWillMount(){
         // uncomment the below when ready to load
         // this.loadCart();
+
     }
 
     render() {
