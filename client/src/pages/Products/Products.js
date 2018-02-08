@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./Products.css";
 import firebase from '../../firebase';
-// import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
 
 class Products extends Component {
   constructor(props){
@@ -25,24 +22,15 @@ class Products extends Component {
 
   componentDidMount() {
     // this grabs the current user logged in and has all the data; You can setState from here as well if you want to store it
-    this.loadProducts();
-
-    // setTimeout(this.setState({
-    //   currentUser:firebase.auth().currentUser
-    // }),1000);
-    // setTimeout(console.log(firebase.auth().currentUser),2000);
-    // this.grabCurrentUser();
-
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
-        console.log(user)
+        // console.log(user);
+        this.setState({user: user})
       } else{
         console.log("no user signed in")
       }
     })
-  }
-
-
+    this.loadProducts();
 
   loadProducts = () => {
     API.getProducts()
@@ -62,14 +50,17 @@ class Products extends Component {
 
   handleSingleProduct = cartdata => {
     console.log(cartdata);
-    // API.getProduct(id)
-    //   .then(res => this.setState({ product: res.data }))
-    //   .catch(err => console.log(err));
-  };
+    API.saveCart({email: "mikebalance@gmail.com",
+      cart: {prodName: cartdata.prodName, 
+        prodPrice: cartdata.prodPrice, 
+        prodIMG: cartdata.prodIMG}
+
+      })
+    };
+  
 
 
   render() {
-    
     return (
 <div>
             {this.state.products.length ? (
@@ -78,15 +69,18 @@ class Products extends Component {
                 <div className="prod-container" key={product._id} >
                     <img className="carousel-img img-fluid" src={product.img} alt={product.name === 'The Gummy Book' ? 'The Gummy Book' : "The Pastry Book" ? 'The Pastry Book': "The Gummy Book" ? "The Gummy Book":""}></img>
                     <div className="prod-descrip">
-                    <strong>{product.name}</strong>
-                    <h6>Contains:</h6>
+                    <strong className="carousel-font prod-title">{product.name}</strong>
+                    <h6 className="prod-contains">Contains:</h6>
+                    <div className="product-contents carousel-font">
                     {product.contents.item1}<br/>
                     {product.contents.item2}<br/>
                     {product.contents.item3}<br/>
-                    <h6>Price:</h6>
-                    {product.price}<br/>
-                    <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>Add To Cart</button>
-                    </div>
+                </div>
+                <h6 className="prod-price">Price:<br/>
+                {product.price}
+                </h6>
+                <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn sanch-button" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>Add To Cart</button>
+                </div>
                 </div>
                 )}
               </div>
