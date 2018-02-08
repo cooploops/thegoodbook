@@ -2,36 +2,35 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./Products.css";
 import firebase from '../../firebase';
-// import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
 
 class Products extends Component {
-  state = {
-    products: [],
-    name: "",
-    contents: {
-      item1: "",
-      item2: "",
-      item3: ""
-    },
-  price: "",
-  img: ""
-  };
-
-  componentWillMount(){
-    setTimeout(()=>{
-      const user = firebase.auth().currentUser;
-      console.log(user.uid);
-      console.log(user.displayName);
-      console.log(user.email);
-    },350)
+  constructor(props){
+    super(props);
+    this.state = {
+      products: [],
+      name: "",
+      contents: {
+        item1: "",
+        item2: "",
+        item3: ""
+      },
+    price: "",
+    img: "",
+    currentUser:null
+    }
   }
 
   componentDidMount() {
     // this grabs the current user logged in and has all the data; You can setState from here as well if you want to store it
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+        // console.log(user);
+        this.setState({user: user})
+      } else{
+        console.log("no user signed in")
+      }
+    })
     this.loadProducts();
-  }
 
   loadProducts = () => {
     API.getProducts()
@@ -51,15 +50,18 @@ class Products extends Component {
 
   handleSingleProduct = cartdata => {
     console.log(cartdata);
-    // API.getProduct(id)
-    //   .then(res => this.setState({ product: res.data }))
-    //   .catch(err => console.log(err));
-  };
+    API.saveCart({email: "mikebalance@gmail.com",
+      cart: {prodName: cartdata.prodName, 
+        prodPrice: cartdata.prodPrice, 
+        prodIMG: cartdata.prodIMG}
+
+      })
+    };
+  
 
 
   render() {
     return (
-      // <Container fluid>
 <div>
             {this.state.products.length ? (
               <div className="container-fluid">

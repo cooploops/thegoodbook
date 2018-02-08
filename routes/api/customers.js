@@ -6,6 +6,9 @@ router.route("/")
   .get(customersController.findAll)
   .post(customersController.update);
 
+  router.route("/updatecart")
+  .post(customersController.updateCart);
+
 // Matches with "/api/customers/:id"
 router
   .route("/:id")

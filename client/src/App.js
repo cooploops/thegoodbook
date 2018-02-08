@@ -7,7 +7,6 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import API from "./utils/API";
-// import Carousel from "./components/Carousel";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
@@ -81,7 +80,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/products" component={Products} />
-            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/Cart" component={Cart} />
             <Route component={NoMatch} />
           </Switch>
           <Footer />

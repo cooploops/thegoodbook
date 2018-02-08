@@ -1,15 +1,31 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Footer from "../../components/Footer";
 import "./Cart.css";
+import Form from '../../components/Form';
+import Jumbotron from '../../components/Jumbotron';
+import CartItem from '../../components/CartItem';
+import firebase from '../../firebase';
 
 class Cart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            cart: []
+            currentUser: null
         }
     }
+
+    componentDidMount() {    
+        firebase.auth().onAuthStateChanged((user)=>{
+          if(user){
+            console.log(user);
+            this.setState({
+                currentUser:user
+            });
+          } else{
+            console.log("no user signed in")
+          }
+        })
+      }
 
     // loadCart(){
     //     API.getCustomer(id)
@@ -24,20 +40,36 @@ class Cart extends Component {
         // this.loadCart();
     }
 
-    render(){
-        return(
-            <div>
+    render() {
+        return (
+            
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-9">
-                        <p>hi</p>
+                        <div className="col-sm-9">
+                            <div className="row">
+                            </div>
+                            <div className="container">
+                                <CartItem
+                                user={this.state.currentUser} />
+                            </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-3">
+                            <p>Total Column</p>
+                            <button className="btn btn-primary checkoutBtn mx-auto">Checkout</button>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-9">
+                            <div className="container">
+                                <Form 
+                                user={this.state.currentUser}/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
         )
     }
 
 }
+export default Cart;
