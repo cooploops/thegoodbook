@@ -1,4 +1,4 @@
-![alt text](client/public/img/tbg-logo-readme.png)
+![alt text](img/tbg-logo-readme.png)
 
 # The Good Book
 
