@@ -2,35 +2,23 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./Products.css";
 import firebase from '../../firebase';
-// import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
 
 class Products extends Component {
-  state = {
-    products: [],
-    name: "",
-    contents: {
-      item1: "",
-      item2: "",
-      item3: ""
-    },
-  price: "",
-  img: "",
-  user: null
-  };
-
-  // componentWillMount(){
-  //   setTimeout(()=>{
-  //     const user = firebase.auth().currentUser;
-  //     console.log(user.uid);
-  //     console.log(user.displayName);
-  //     console.log(user.email);
-  //   },350)
-  // }
-
-
-
+  constructor(props){
+    super(props);
+    this.state = {
+      products: [],
+      name: "",
+      contents: {
+        item1: "",
+        item2: "",
+        item3: ""
+      },
+    price: "",
+    img: "",
+    currentUser:null
+    }
+  }
 
   componentDidMount() {
     // this grabs the current user logged in and has all the data; You can setState from here as well if you want to store it
@@ -43,7 +31,6 @@ class Products extends Component {
       }
     })
     this.loadProducts();
-  }
 
   loadProducts = () => {
     API.getProducts()
@@ -74,9 +61,7 @@ class Products extends Component {
 
 
   render() {
-    console.log(this.state.user);
     return (
-      // <Container fluid>
 <div>
             {this.state.products.length ? (
               <div className="container-fluid">
