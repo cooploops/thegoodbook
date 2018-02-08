@@ -31,6 +31,7 @@ class Products extends Component {
       }
     })
     this.loadProducts();
+  }
 
   loadProducts = () => {
     API.getProducts()
