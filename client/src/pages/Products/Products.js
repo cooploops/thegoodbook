@@ -14,7 +14,7 @@ class Products extends Component {
         item2: "",
         item3: ""
       },
-    price: "",
+    price: null,
     img: "",
     currentUser:null
     }
@@ -42,7 +42,7 @@ class Products extends Component {
           item2: "",
           item3: ""
         },
-        price: "",
+        price: null,
         img: ""})
       )
       .catch(err => console.log(err));
@@ -56,7 +56,7 @@ class Products extends Component {
         uid: this.state.currentUser.uid,
         cart: {
         prodName: cartdata.prodName, 
-        prodPrice: cartdata.prodPrice, 
+        prodPrice: parseFloat(cartdata.prodPrice), 
         prodIMG: cartdata.prodIMG
         }  
       }
@@ -83,7 +83,7 @@ class Products extends Component {
                 <h6 className="prod-price">Price:<br/>
                 {product.price}
                 </h6>
-                <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn sanch-button" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>Add To Cart</button>
+                <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn sanch-button" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice:product.price, prodIMG: product.img})}>Add To Cart</button>
                 </div>
                 </div>
                 )}

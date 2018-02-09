@@ -19,7 +19,7 @@ class Carousel extends Component {
             item2: "",
             item3: ""
           },
-        price: "",
+        price: null,
         img: "",
         currentUser:null
         }
@@ -47,7 +47,7 @@ class Carousel extends Component {
               item2: "",
               item3: ""
             },
-            price: "",
+            price: null,
             img: ""})
           )
           .catch(err => console.log(err));
@@ -61,7 +61,7 @@ class Carousel extends Component {
             uid: this.state.currentUser.uid,
             cart: {
             prodName: cartdata.prodName, 
-            prodPrice: cartdata.prodPrice, 
+            prodPrice: parseFloat(cartdata.prodPrice), 
             prodIMG: cartdata.prodIMG
             }  
           }

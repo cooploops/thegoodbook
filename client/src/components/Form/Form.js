@@ -28,10 +28,7 @@ const Form = props =>
     </div>
     <div className="form-group col-sm-4">
       <label for="inputState">State</label>
-      <select id="inputState" className="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
+      <input type="text" className="form-control" id="inputState"/>
     </div>
     <div className="form-group col-sm-2">
       <label for="inputZip">Zip</label>

@@ -11,7 +11,7 @@ module.exports = {
   },
   findById: function(req, res) {
     db.Customer
-      .findById(req.params.id)
+      .findOne({uid:req.params.id},{cart:1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -28,7 +28,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   updateCart: function(req, res) {
-    console.log(req.body);
     db.Customer
       .findOneAndUpdate({ uid: req.body.uid }, {$push: {cart: req.body.cart}})
       .then(dbModel => res.json(dbModel))

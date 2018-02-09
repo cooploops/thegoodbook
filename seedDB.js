@@ -18,7 +18,7 @@ const productSeed = [{
     item2: "Cocoa Crispy Treat",
     item3: "PB and Jays"
   },
-  price: "$18.99",
+  price: 18.99,
   quantity: 10,
   img: "./img/ChocolateTreats.jpeg"
 },
@@ -29,7 +29,7 @@ const productSeed = [{
     item2: "Jelly Beans",
     item3: "Hard Candy"
   },
-  price: "$15.99",
+  price: 15.99,
   quantity: 6,
   img: "./img/gummies.jpeg"
 },
@@ -40,7 +40,7 @@ const productSeed = [{
     item2: "Danish",
     item3: "Cream Puff"
   },
-  price: "$18.99",
+  price: 18.99,
   quantity: 8,
   img: "./img/bakedGoods.jpeg"
 }];
