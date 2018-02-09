@@ -80,7 +80,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/products" component={Products} />
-            <Route exact path="/Cart" component={Cart} />
+            <Route exact path="/cart" component={Cart} />
             <Route component={NoMatch} />
           </Switch>
           <Footer />

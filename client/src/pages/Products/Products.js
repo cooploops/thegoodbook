@@ -14,7 +14,7 @@ class Products extends Component {
         item2: "",
         item3: ""
       },
-    price: "",
+    price: null,
     img: "",
     buttonText: "",
     currentUser:null
@@ -43,10 +43,11 @@ class Products extends Component {
           item2: "",
           item3: ""
         },
-        price: "",
+        price: null,
         img: "",
         buttonText: "",
       })
+
       )
       .catch(err => console.log(err));
 
@@ -63,7 +64,7 @@ class Products extends Component {
         uid: this.state.currentUser.uid,
         cart: {
         prodName: cartdata.prodName, 
-        prodPrice: cartdata.prodPrice, 
+        prodPrice: parseFloat(cartdata.prodPrice), 
         prodIMG: cartdata.prodIMG
         }  
       }

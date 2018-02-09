@@ -2,14 +2,24 @@ import React from 'react';
 import './CartItem.css';
 
 const CartItem = props => (
-    <div className="media m-1 border rounded">
-        <img className="mr-3 cartItemImg" src="..." alt="image of product only 100x100"/>
+    <div className="">
+        <h5>Your Cart</h5>
+    {!props.user?
+    <div>please sign in if you would like to open a cart</div>
+    :
+    !props.cart?
+    <div> There are no items in your cart</div>
+    :
+    props.cart.map(product =>
+    <div key={product.prodName} className="media m-1 border rounded">
+        <img className="mr-3 cartItemImg align-self-start" alt={product.prodName} src={product.prodIMG}/>
         <div className="media-body">
-            <h5 className="mt-0">Product Name Here through props</h5>
-            <strong>Contents:</strong> put contents inline here through props
-            <br/>
-            <strong>Price:</strong> price of product goes here through props
+            <h5 className="mt-0">{product.prodName}</h5>
+            <h6 className="mt-0 pt-0"><strong>Price:</strong> {product.prodPrice}</h6>
+            <strong>Order Quantity:</strong> {product.prodName === "The Chocolate Book" ? props.numProds["The Chocolate Book"] : product.prodName === "The Gummy Book" ? props.numProds["The Gummy Book"] : product.prodName === "The Pastry Book" ? props.numProds["The Pastry Book"] : <div/>}
         </div>
+    </div>
+        )}
     </div>
 );
 

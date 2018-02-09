@@ -4,32 +4,26 @@ import "./Cart.css";
 import Form from '../../components/Form';
 import CartItem from '../../components/CartItem';
 import firebase from '../../firebase';
+import _ from 'lodash';
 
 class Cart extends Component {
     constructor(props){
         super(props);
         this.state = {
-            currentUser: null
+            currentUser: null,
+            cart:null,
+            numProds:null,
+            totalPrice:null
         }
     }
 
     componentDidMount() {    
-        firebase.auth().onAuthStateChanged((user)=>{
-          if(user){
-            console.log(user);
-            this.setState({
-                currentUser:user
-            });
-            this.handleAddressSave();
-          } else{
-            console.log("no user signed in")
-          }
-        })
+        
       }
 
 //Test for saving address // This successfully save strings but needs to be modified
 //Check componentDidMount
-      handleAddressSave() {
+      handleAddressSave = () => {
         API.saveAddress(
         {
          uid: this.state.currentUser.uid,
@@ -40,17 +34,27 @@ class Cart extends Component {
             zipCode: "90025"  }}
         )};
 
-    // loadCart(){
-    //     API.getCustomer(id)
-    //     .then(res => 
-    //     this.setState({ cart: res.data}))
-    //     .then(() => console.log(this.state.cart))
-    //     .catch(err => console.log(err));
-    // }
+    loadCart = (id) => {
+        API.getCustomer(id)
+        .then(res => 
+        this.setState({cart:_.uniqBy(res.data.cart, 'prodName'), numProds: _.countBy(res.data.cart,'prodName'), totalPrice:_.sumBy(res.data.cart,'prodPrice')}))
+        .then(() => console.log(`this is cart state ${JSON.stringify(this.state.cart)} : this is numProds state ${JSON.stringify(this.state.numProds)} : this is totalPrice state ${JSON.stringify(this.state.totalPrice)}`))
+        .catch(err => console.log(err));
+    }
 
     componentWillMount(){
-        // uncomment the below when ready to load
-        // this.loadCart();
+        
+        firebase.auth().onAuthStateChanged((user)=>{
+            if(user){
+              console.log(user);
+              this.setState({
+                  currentUser:user
+              });
+              this.loadCart(this.state.currentUser.uid)
+            } else{
+              console.log("no user signed in")
+            }
+          })
 
     }
 
@@ -64,12 +68,16 @@ class Cart extends Component {
                             </div>
                             <div className="container">
                                 <CartItem
-                                user={this.state.currentUser} />
+                                user={this.state.currentUser}
+                                cart={this.state.cart}
+                                numProds={this.state.numProds}
+                                />
                             </div>
                         </div>
-                        <div className="col-sm-3">
-                            <p>Total Column</p>
-                            <button className="btn btn-primary checkoutBtn mx-auto">Checkout</button>
+                        <div className="col-sm-3 text-center">
+                            <h3 className=""><strong>Total</strong></h3>
+                            <h6 className="pt-0">{this.state.totalPrice}</h6>
+                            <button className="btn btn-primary checkoutBtn">Checkout</button>
                         </div>
                     </div>
                     <div className="row">
