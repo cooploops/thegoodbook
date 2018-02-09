@@ -38,6 +38,9 @@ export default {
   // Saves a product to the database
   saveProduct: function(productData) {
     return axios.post("/api/products", productData);
+  },
+  updateProductBtn: function(productData) {
+    return axios.post("/api/products/updatebutton/", productData);
   }
 };
 

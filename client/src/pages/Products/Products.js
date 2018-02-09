@@ -16,6 +16,7 @@ class Products extends Component {
       },
     price: "",
     img: "",
+    buttonText: "",
     currentUser:null
     }
   }
@@ -43,14 +44,20 @@ class Products extends Component {
           item3: ""
         },
         price: "",
-        img: ""})
+        img: "",
+        buttonText: "",
+      })
       )
       .catch(err => console.log(err));
 
   };
 
   handleSingleProduct = cartdata => {
+    API.updateProductBtn(
+      { name: cartdata.prodName, buttonText: "Added!"}
+    )
     console.log(this.state.currentUser.uid);
+    this.loadProducts();
     API.saveCart(
       {
         uid: this.state.currentUser.uid,
@@ -60,7 +67,13 @@ class Products extends Component {
         prodIMG: cartdata.prodIMG
         }  
       }
-    )};
+    )
+    setTimeout(function(){
+    API.updateProductBtn(
+      { name: cartdata.prodName, buttonText: "Add To Cart"}
+    )
+  }, 500);
+  };
   
 
 
@@ -81,9 +94,9 @@ class Products extends Component {
                     {product.contents.item3}<br/>
                 </div>
                 <h6 className="prod-price">Price:<br/>
-                {product.price}
+                ${product.price}
                 </h6>
-                <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn sanch-button" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>Add To Cart</button>
+                <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn sanch-button" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>{product.buttonText}</button>
                 </div>
                 </div>
                 )}
