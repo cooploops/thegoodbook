@@ -20,8 +20,8 @@ export default {
     saveCart: function(cartData) {
       return axios.post("/api/customers/updatecart/", cartData);
     },
-    saveAddress: function(cartData) {
-      return axios.post("/api/customers/saveaddress/", cartData);
+    saveAddress: function(addressData) {
+      return axios.post("/api/customers/saveaddress/", addressData);
       },
   // Gets all products
   getProducts: function() {

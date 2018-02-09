@@ -38,7 +38,6 @@ class Cart extends Component {
         API.getCustomer(id)
         .then(res => 
         this.setState({cart:_.uniqBy(res.data.cart, 'prodName'), numProds: _.countBy(res.data.cart,'prodName'), totalPrice:_.sumBy(res.data.cart,'prodPrice')}))
-        .then(() => console.log(`this is cart state ${JSON.stringify(this.state.cart)} : this is numProds state ${JSON.stringify(this.state.numProds)} : this is totalPrice state ${JSON.stringify(this.state.totalPrice)}`))
         .catch(err => console.log(err));
     }
 
@@ -46,7 +45,6 @@ class Cart extends Component {
         
         firebase.auth().onAuthStateChanged((user)=>{
             if(user){
-              console.log(user);
               this.setState({
                   currentUser:user
               });
@@ -74,9 +72,10 @@ class Cart extends Component {
                                 />
                             </div>
                         </div>
-                        <div className="col-sm-3 text-center">
-                            <h3 className=""><strong>Total</strong></h3>
-                            <h6 className="pt-0">{this.state.totalPrice}</h6>
+                        <div className="col-sm-3 align-self-end text-center">
+                            <h2 className=""><strong>Total</strong></h2>
+                            <hr/>
+                            <h5 className="pt-0 mb-3">${this.state.totalPrice}</h5>
                             <button className="btn btn-primary checkoutBtn">Checkout</button>
                         </div>
                     </div>
