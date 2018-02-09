@@ -19,7 +19,7 @@ class Home extends Component{
     API.getProducts()
       .then(res =>
         this.setState({products: res.data})
-      ).then(()=>console.log(this.state.products))
+      )
       .catch(err => console.log(err));
   };
 
