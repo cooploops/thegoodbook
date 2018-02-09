@@ -23,7 +23,7 @@ module.exports = {
   },
   update: function(req, res) {
     db.Product
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ name: req.body.name }, {$set: {buttonText: req.body.buttonText}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

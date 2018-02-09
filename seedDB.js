@@ -20,7 +20,8 @@ const productSeed = [{
   },
   price: 18.99,
   quantity: 10,
-  img: "./img/ChocolateTreats.jpeg"
+  img: "./img/ChocolateTreats.jpeg",
+  buttonText: "Add To Cart"
 },
 {
   name: "The Gummy Book",
@@ -31,7 +32,8 @@ const productSeed = [{
   },
   price: 15.99,
   quantity: 6,
-  img: "./img/gummies.jpeg"
+  img: "./img/gummies.jpeg",
+  buttonText: "Add To Cart"
 },
 {
   name: "The Baked Book",
@@ -40,9 +42,10 @@ const productSeed = [{
     item2: "Danish",
     item3: "Cream Puff"
   },
-  price: 18.99,
+  price: 17.99,
   quantity: 8,
-  img: "./img/bakedGoods.jpeg"
+  img: "./img/bakedGoods.jpeg",
+  buttonText: "Add To Cart"
 }];
 
 // const customerSeed = [{}];
