@@ -1,8 +1,8 @@
-![alt text](img/tbg-logo-readme.png)
+![The Good Book](/img/tbg-logo-readme.png)
 
 # The Good Book
 
- - www.example.com
+https://thegoodbook.herokuapp.com/
 
 ## The Good Book is a monthly edibles subscription service that delivers tasty treats in a descrete 'book' package. Browse our different subscriptions we offer and sign in with Google to purchase.
 
@@ -19,7 +19,14 @@
 - ReactJS for front end
 - NodeJS and Express for web server
 - Axios for AJAX GET and POST
+- Mongoose and MongoDB for database
+- Firebase for Authentication
 
 ## Code Explanation
-
--------------
+React explanation
+Express server explanation
+(Controllers, Models, Routes)
+API explanation
+CORS explanation
+Mongo explanation
+Firebase explanation
