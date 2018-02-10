@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 // This file empties the customers and products collection and inserts the former and latter below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/goodbookdata",
+  "mongodb://heroku_4b3sz57l:cj6qs8f6ljktutpbr9vcaafp9o@ds131258.mlab.com:31258/heroku_4b3sz57l",
   {
     useMongoClient: true
   }
