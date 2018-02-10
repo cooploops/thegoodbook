@@ -68,7 +68,7 @@ class Products extends Component {
         }  
       }
     )
-    setTimeout(function(){
+    setTimeout(()=>{
     API.updateProductBtn(
       { name: cartdata.prodName, buttonText: "Add To Cart"}
     )
@@ -96,7 +96,7 @@ class Products extends Component {
                 <h6 className="prod-price">Price:<br/>
                 ${product.price}
                 </h6>
-                <button data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn sanch-button" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>{product.buttonText}</button>
+                <button disabled={!this.state.currentUser} data-db-name={product.name} data-db-price={product.price} data-db-img={product.img} className="btn sanch-button" onClick={() => this.handleSingleProduct({prodName: product.name, prodPrice: product.price, prodIMG: product.img})}>{product.buttonText}</button>
                 </div>
                 </div>
                 )}
