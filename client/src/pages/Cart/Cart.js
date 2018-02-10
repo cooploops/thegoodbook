@@ -59,7 +59,7 @@ class Cart extends Component {
     render() {
         return (
             
-                <div className="container">
+                <div className="container cart-cont">
                     <div className="row">
                         <div className="col-sm-9">
                             <div className="row">

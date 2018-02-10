@@ -12,7 +12,7 @@ const CartItem = props => (
     :
     props.cart.map(product =>
     <div key={product.prodName} className="media m-1 border rounded">
-        <img className="mr-3 cartItemImg align-self-start" alt={product.prodName} src={product.prodIMG}/>
+        <img className="mr-3 cartItemImg align-self-start cart-thumb" alt={product.prodName} src={product.prodIMG}/>
         <div className="media-body">
             <h5 className="mt-0">{product.prodName}</h5>
             <h6 className="mt-0 pt-0"><strong>Price:</strong> ${product.prodPrice}</h6>
