@@ -1,3 +1,15 @@
 p{
     color:black;
 }
+
+.cart-cont {
+    width: 800px;
+    background-color: white;
+    margin-top: 25px;
+    padding-top: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(214, 214, 214);
+    border-top: none;
+}

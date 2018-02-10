@@ -57,7 +57,6 @@ class Products extends Component {
     API.updateProductBtn(
       { name: cartdata.prodName, buttonText: "Added!"}
     )
-    console.log(this.state.currentUser.uid);
     this.loadProducts();
     API.saveCart(
       {
