@@ -1,7 +1,5 @@
 ![The Good Book](client/public/img/tgb-logo-readme.png)
 
-# The Good Book
-
 https://thegoodbook.herokuapp.com/
 
 ## The Good Book is a monthly edibles subscription service that delivers tasty treats in a descrete 'book' package. Browse our different subscriptions we offer and sign in with Google to purchase.
