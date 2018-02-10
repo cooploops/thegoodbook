@@ -1,4 +1,4 @@
-![The Good Book](/img/tbg-logo-readme.png)
+![The Good Book](./img/tbg-logo-readme.png)
 
 # The Good Book
 
@@ -23,10 +23,10 @@ https://thegoodbook.herokuapp.com/
 - Firebase for Authentication
 
 ## Code Explanation
-React explanation
-Express server explanation
+- React explanation
+- Express server explanation
 (Controllers, Models, Routes)
-API explanation
-CORS explanation
-Mongo explanation
-Firebase explanation
+- API explanation
+- CORS explanation
+- Mongo explanation
+- Firebase explanation
