@@ -22,7 +22,6 @@ class App extends Component {
     auth.signInWithPopup(provider)
     .then((result) => {
       const user = result.user;
-      console.log(user);
       this.setState({
         user
       });
@@ -32,7 +31,6 @@ class App extends Component {
 
   //Need to add oauth token too
   handleCustomerSubmit = event => {
-    console.log(this.state.user.email);
 
       API.saveCustomer({
         uid: this.state.user.uid,
