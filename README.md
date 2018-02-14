@@ -25,7 +25,7 @@ https://thegoodbook.herokuapp.com/
 
 - CORS is then used to allows access control betweeen a ReactJS server on PORT 3000 and the Express server on PORT 3001.
 
-- App.js imports all the necessary React components to be rendered in the root <div> container in index.html. React-router-dom, Firebase auth and all API scripts are imported as well.
+- App.js imports all the necessary React components to be rendered in the root `<div>` container in index.html. React-router-dom, Firebase auth and all API scripts are imported as well.
 
 - The Nav component handles all the react-router Links that render all the main site components (a.k.a. pages) and the Firebase auth login, which prompts the user to login using their Google account and stores their email, uid, displayName, and photoURL to a “customer” collection in an MLab Mongo database.
 
